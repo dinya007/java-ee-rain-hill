@@ -22,7 +22,7 @@ import java.net.URL;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Arquillian.class)
-public class RainHillControllerTest {
+public class RainHillControllerTestIT {
 
     private static WebTarget target;
 
@@ -45,13 +45,13 @@ public class RainHillControllerTest {
     @Before
     public void setupClass() throws MalformedURLException {
         Client client = ClientBuilder.newClient();
-        target = client.target(URI.create(new URL(base, "rain-hill/calc").toExternalForm()));
+        target = client.target(URI.create(new URL(base, "rain-hill/calc?hills=2&hills=0&hills=1").toExternalForm()));
     }
 
     @Test
-    public void test1Post() {
-        String response = target.request().get(String.class);
-        assertEquals("Hello world!", response);
+    public void testCalcGet() {
+        Integer response = target.request().get(Integer.class);
+        assertEquals(1, response.intValue());
     }
 
 }

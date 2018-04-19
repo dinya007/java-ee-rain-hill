@@ -1,4 +1,9 @@
 package ru.tisov.denis.crx.service;
 
-public interface RainHilService {
+import java.util.List;
+
+public interface RainHillService {
+
+    int calc(List<Integer> hills);
+
 }
