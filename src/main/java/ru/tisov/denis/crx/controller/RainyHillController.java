@@ -2,7 +2,7 @@ package ru.tisov.denis.crx.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import ru.tisov.denis.crx.service.RainHillService;
+import ru.tisov.denis.crx.service.RainyHillService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -11,18 +11,18 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.util.List;
 
-@Api("Rain hill controller")
-@Path("/calc")
-public class RainHillController {
+@Api("Rainy hill controller")
+@Path("/calculate")
+public class RainyHillController {
 
     @Inject
-    private RainHillService rainHillService;
+    private RainyHillService rainyHillService;
 
     @GET
     @Produces("text/plain")
-    @ApiOperation(value = "Calculate rain hills", response = Integer.class)
+    @ApiOperation(value = "Calculate rainy hills", response = Integer.class)
     public int get(@QueryParam("hills") List<Integer> hills) {
-        return rainHillService.calc(hills);
+        return rainyHillService.calculate(hills);
     }
 
 }

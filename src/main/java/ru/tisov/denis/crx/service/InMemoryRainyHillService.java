@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @ApplicationScoped
-public class InMemoryRainHillService implements RainHillService {
+public class InMemoryRainyHillService implements RainyHillService {
 
 
     //Memory complexity O(n) and time complexity O(n)
-    public int calc(List<Integer> hills) {
+    public int calculate(List<Integer> hills) {
         if (hills == null || hills.isEmpty()) {
             return 0;
         }
