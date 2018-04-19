@@ -47,12 +47,12 @@ public class InMemoryRainHillServiceTest {
 
     @Test
     public void testCalc8() {
-        Assert.assertEquals(0, rainHillService.calc(Arrays.asList(2, 1, 0)));
+        Assert.assertEquals(0, rainHillService.calc(Arrays.asList(1, 2, 1, 0)));
     }
 
     @Test
     public void testCalc9() {
-        Assert.assertEquals(0, rainHillService.calc(Arrays.asList(1, 2, 1, 0)));
+        Assert.assertEquals(0, rainHillService.calc(Arrays.asList(2, 1, 0)));
     }
 
     @Test

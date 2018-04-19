@@ -15,7 +15,6 @@ public class InMemoryRainHillService implements RainHillService {
         }
 
         Integer startValue = null;
-
         int[] counters = new int[hills.size()];
 
         for (int i = 0; i < hills.size(); i++) {
@@ -27,7 +26,7 @@ public class InMemoryRainHillService implements RainHillService {
                 startValue = null;
             }
 
-            if (startValue == null && i != hills.size() - 1 && (hills.get(i + 1) < hills.get(i))) {
+            if (startValue == null && (i != hills.size() - 1) && (hills.get(i + 1) < hills.get(i))) {
                 startValue = hills.get(i);
             }
         }
@@ -44,7 +43,7 @@ public class InMemoryRainHillService implements RainHillService {
                 startValue = null;
             }
 
-            if (startValue == null && i != 0 && (hills.get(i - 1) < hills.get(i))) {
+            if (startValue == null && (i != 0) && (hills.get(i - 1) < hills.get(i))) {
                 startValue = hills.get(i);
             }
         }
