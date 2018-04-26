@@ -31,7 +31,7 @@ public class InMemoryRainyHillService implements RainyHillService {
             }
         }
 
-        startValue = 0;
+        startValue = hills.get(hills.size() - 1);
 
         for (int i = hills.size() - 1; i >= 0; i--) {
             if (startValue != null && (hills.get(i) <= startValue)) {

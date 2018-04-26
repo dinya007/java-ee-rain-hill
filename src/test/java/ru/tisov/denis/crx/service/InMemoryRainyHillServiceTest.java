@@ -11,6 +11,16 @@ public class InMemoryRainyHillServiceTest {
     private RainyHillService rainyHillService = new InMemoryRainyHillService();
 
     @Test
+    public void testCalculateWithNegativeHeight1() {
+        Assert.assertEquals(1, rainyHillService.calculate(Arrays.asList(0, -1, 1)));
+    }
+
+    @Test
+    public void testCalculateWithNegativeHeight2() {
+        Assert.assertEquals(0, rainyHillService.calculate(Arrays.asList( -1, -2)));
+    }
+
+    @Test
     public void testCalc1() {
         Assert.assertEquals(2, rainyHillService.calculate(Arrays.asList(3, 2, 4, 1, 2)));
     }
